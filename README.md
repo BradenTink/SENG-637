@@ -6,9 +6,9 @@ Group 7's assignment repo for SENG-637 ✔️
 
 - 🏐 **Alton Wong**
 - 🧠 **Ben Reid**
-- 🎨 **Braden Tink**
-- 💡 **Carissa Chung**
-- 🔥 **Christian Valdez**
+- 🧢 **Braden Tink**
+- 🐰 **Carissa Chung**
+- 🌶️🍚 **Christian Valdez**
 
 ## 📂 Folder Structure
 
