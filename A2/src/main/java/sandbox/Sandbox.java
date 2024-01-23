@@ -10,4 +10,12 @@ public class Sandbox {
 		}
 		return max;
 	}
+	
+	public static int addNumbers(int x, int y) {
+		return x+y;
+	}
+	
+	public static void displayName(String name) {
+		System.out.println("Hello " + name + ".");
+	}
 }

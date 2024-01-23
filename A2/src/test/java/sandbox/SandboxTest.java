@@ -11,4 +11,8 @@ public class SandboxTest {
         assertEquals(-1, Sandbox.findMax(new int[]{-3, -1, -4, -2}));
     }
 
+    @Test
+    public void testAdd() {
+    	assertEquals(5, Sandbox.addNumbers(2, 3));
+    }
 }
