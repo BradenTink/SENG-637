@@ -1,8 +1,12 @@
 package sandbox;
 
+// JUnit 4
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+/**
+ * Test cases for Calculator class using JUnit 4
+ */
 public class SandboxTest {
 
     @Test
