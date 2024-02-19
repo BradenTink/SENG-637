@@ -32,7 +32,7 @@ The `constrain` method was tested across various scenarios to ensure its functio
 - **testAboveConstrain**
 
   - **Objective**: Verify the `constrain` method handles values above the range.
-  - **Input**: Value > 1
+  - **Input**: 2
   - **Expected Outcome**: Method operates correctly.
   - **Status**: Pass
 
@@ -46,7 +46,7 @@ The `constrain` method was tested across various scenarios to ensure its functio
 - **testBelowConstrain**
 
   - **Objective**: Assess the `constrain` method's handling of values below the range.
-  - **Input**: Value < -1
+  - **Input**: -2
   - **Expected Outcome**: Method should correctly handle the value.
   - **Status**: Fail
 
@@ -60,15 +60,109 @@ The `constrain` method was tested across various scenarios to ensure its functio
 - **testInsideConstrain**
 
   - **Objective**: Check the `constrain` method's effectiveness for values within the range.
-  - **Input**: -1 < Value < 1
+  - **Input**: 0.5
   - **Expected Outcome**: Method operates correctly.
   - **Status**: Pass
 
 - **testDecimalInsideConstrain**
   - **Objective**: Verify the `constrain` method's functionality for decimal values within the range.
-  - **Input**: Decimal value between -1 and 1
+  - **Input**: 0.5
   - **Expected Outcome**: Method operates correctly.
   - **Status**: Pass
+
+#### Shift Method Testing
+
+The `shift` method was assessed through various tests to verify its capability to correctly adjust the range of values, with a focus on ensuring that the method behaves as expected under a wide array of conditions.
+
+- **testPositiveShiftLowerBound**
+
+  - **Objective**: Verify that the lower bound correctly increases by the shift value for a positive shift.
+  - **Input**: Positive shift of 2
+  - **Expected Outcome**: Lower bound should be 1.
+  - **Status**:
+
+- **testPositiveShiftUpperBound**
+
+  - **Objective**: Ensure that the upper bound correctly increases by the shift value for a positive shift.
+  - **Input**: Positive shift of 2
+  - **Expected Outcome**: Upper bound should be 3.
+  - **Status**:
+
+- **testNegativeShiftLowerBound**
+
+  - **Objective**: Confirm that the lower bound correctly decreases by the shift value for a negative shift.
+  - **Input**: Negative shift of -2
+  - **Expected Outcome**: Lower bound should be -3.
+  - **Status**:
+
+- **testNegativeShiftUpperBound**
+
+  - **Objective**: Verify that the upper bound correctly decreases by the shift value for a negative shift.
+  - **Input**: Negative shift of -2
+  - **Expected Outcome**: Upper bound should be -1.
+  - **Status**:
+
+- **testNoShiftLowerBound**
+
+  - **Objective**: Test that the lower bound remains unchanged with a shift of 0.
+  - **Input**: No shift (0)
+  - **Expected Outcome**: Lower bound remains -1.
+  - **Status**:
+
+- **testNoShiftUpperBound**
+
+  - **Objective**: Ensure the upper bound remains unchanged with a shift of 0.
+  - **Input**: No shift (0)
+  - **Expected Outcome**: Upper bound remains 1.
+  - **Status**:
+
+- **testShiftWithLargeDelta**
+
+  - **Objective**: Evaluate the method's behavior with a significantly large shift value.
+  - **Input**: Large shift of 1000000
+  - **Expected Outcome**: Correctly adjusted bounds for a large shift.
+  - **Status**:
+
+- **testShiftedLength**
+
+  - **Objective**: Confirm that the size of the range remains constant after shifting.
+  - **Input**: Positive shift of 2
+  - **Expected Outcome**: Range size (length) remains constant at 2.0.
+  - **Status**:
+
+- **testCentralValue**
+
+  - **Objective**: Verify that the central value of the range is correctly shifted.
+  - **Input**: Positive shift of 2
+  - **Expected Outcome**: Central value should be 2.
+  - **Status**:
+
+- **testIntersect**
+
+  - **Objective**: Test if the shifted range correctly intersects with a specified range.
+  - **Input**: Positive shift of 2; test intersect with range 1 to 3
+  - **Expected Outcome**: Should intersect.
+  - **Status**:
+
+- **testNoIntersect**
+
+  - **Objective**: Assess if the shifted range does not intersect with a specified range where it shouldn't.
+  - **Input**: Positive shift of 2; test intersect with range 4 to 6
+  - **Expected Outcome**: Should not intersect.
+  - **Status**:
+
+- **testRepeatedShifts**
+
+  - **Objective**: Verify that shifting a range right and then back left returns it to its original bounds.
+  - **Input**: Initial range shifted right by 200 and then left by 200
+  - **Expected Outcome**: Original bounds are restored.
+  - **Status**:
+
+- **testShiftToDoubleLimits**
+  - **Objective**: Evaluate the shift method's ability to handle shifts that approach the limits of double precision.
+  - **Input**: Base range near double precision limit; shift of 1e307
+  - **Expected Outcome**: Range does not collapse to a point after shift.
+  - **Status**:
 
 ### DataUtilities Class Tests
 
