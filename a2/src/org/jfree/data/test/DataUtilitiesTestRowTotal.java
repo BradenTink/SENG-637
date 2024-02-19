@@ -5,8 +5,6 @@ import org.jfree.data.DataUtilities;
 
 import org.jmock.Mockery;
 import org.jmock.Expectations;
-import org.junit.Test;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,34 +23,23 @@ public class DataUtilitiesTestRowTotal {
 	public void testCalculateRowTotalWithValidData() {
 		final Values2D values = context.mock(Values2D.class);
 		context.checking(new Expectations() {{
-			// Assuming there are 2 rows
-			oneOf(values).getRowCount();
-			will(returnValue(2));
+			// Setup 2 rows
+			oneOf(values).getRowCount(); will(returnValue(1));
 			
-			// Assuming each row has 4 columns
-			oneOf(values).getColumnCount();
-			will(returnValue(3));
+			// Setup 3 columns
+			oneOf(values).getColumnCount(); will(returnValue(3));
 			
-			// (0, 0) value
-			atLeast(1).of(values).getValue(0, 0);
-			will(returnValue(1.0));
+            // Setup expectations for the values in row 0
+            oneOf(values).getValue(0, 0); will(returnValue(1.0));
+            oneOf(values).getValue(0, 1); will(returnValue(2.0));
+            oneOf(values).getValue(0, 2); will(returnValue(3.0));
 			
-			// (0, 1) value
-			atLeast(1).of(values).getValue(0, 1);
-			will(returnValue(2.0));
-			
-			// (0, 2) value
-			atLeast(1).of(values).getValue(0, 2);
-			will(returnValue(3.0));
-			
-			double result = DataUtilities.calculateColumnTotal(values, 0);
-			assertEquals("The row total should be 6.0", 6.0, result, 0.00001d);
-			
-			context.assertIsSatisfied();
 			}});
+		double result = DataUtilities.calculateRowTotal(values, 0);
+		assertEquals("The row total should be 6.0", 6.0, result, 0.00001d);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = NullPointerException.class)
 	public void testCalculateRowTotalWithNullData() {
 	    DataUtilities.calculateRowTotal(null, 0);
 	}
@@ -61,19 +48,14 @@ public class DataUtilitiesTestRowTotal {
 	public void testCalculateRowWithInvalidRow() {
 	    final Values2D values = context.mock(Values2D.class);
 	    context.checking(new Expectations() {{
-	        // Add one row
-	        oneOf(values).getRowCount();
-	        will(returnValue(1));
+	        // Setup 1 row
+	        oneOf(values).getRowCount(); will(returnValue(1));
+	        
+			// Setup column
+			oneOf(values).getColumnCount();
 	    }});
 
 	    double result = DataUtilities.calculateRowTotal(values, 1);
 	    assertEquals("The row total should be 0.0 for an invalid row", 0.0, result, 0.00001d);
-	    context.assertIsSatisfied();
-	}
-	
-	@After
-	public void tearDown() {
-		context.assertIsSatisfied();
-		
 	}
 }

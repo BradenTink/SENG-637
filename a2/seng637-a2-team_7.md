@@ -195,7 +195,33 @@ The `calculateColumnTotal` method was examined under various conditions to ensur
   - **Objective**: Check if the method adheres to Javadoc specifications when input is incorrect.
   - **Input**: {null, -2.5}
   - **Expected Outcome**: Method returns 0.
-  - **Status**: Fail
+  - **Status**: Fail, got 3.5
+
+### DataUtilities Class Tests
+
+#### calculateRowTotal Method Testing
+
+The `calculateRowTotal` method was examined under various conditions to ensure its capability to accurately sum row values.
+
+- **testCalculateRowTotalWithValidData**
+
+  - **Objective**: Verify accurate row total calculation with valid row data.
+  - **Input**: Mock `Values2D` object with 3 values in a row (1.0, 2.0, 3.0).
+  - **Expected Outcome**: The method should correctly calculate the total as 6.0.
+  - **Status**: Fail, got 3.0
+
+- **testCalculateRowTotalWithNullData**
+
+  - **Objective**: Assess method's response to null data input.
+  - **Input**: `null` as the data source.
+  - **Expected Outcome**: The method should throw an `NullPointerException`.
+  - **Status**: Pass
+
+- **testCalculateRowWithInvalidRow**
+  - **Objective**: Evaluate the method's handling of an invalid row index.
+  - **Input**: Mock `Values2D` object representing 1 row, with an attempt to calculate total for a non-existing row (row index 1).
+  - **Expected Outcome**: The method should return a total of 0.0, indicating no valid row was processed.
+  - **Status**: Pass
 
 # 4) How the team work/effort was divided and managed
 
