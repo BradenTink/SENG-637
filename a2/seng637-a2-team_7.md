@@ -33,41 +33,41 @@ The `constrain` method was tested across various scenarios to ensure its functio
 
   - **Objective**: Verify the `constrain` method handles values above the range.
   - **Input**: 2
-  - **Expected Outcome**: Method operates correctly.
+  - **Expected Outcome**: 1.0
   - **Status**: Pass
 
 - **testAtHighConstrain**
 
   - **Objective**: Validate the `constrain` method's functionality at the upper boundary of the range.
   - **Input**: Value = 1
-  - **Expected Outcome**: Method operates correctly.
+  - **Expected Outcome**: 1.0
   - **Status**: Pass
 
 - **testBelowConstrain**
 
   - **Objective**: Assess the `constrain` method's handling of values below the range.
   - **Input**: -2
-  - **Expected Outcome**: Method should correctly handle the value.
+  - **Expected Outcome**: -1.0
   - **Status**: Fail
 
 - **testAtLowConstrain**
 
   - **Objective**: Test the `constrain` method's performance at the lower boundary of the range.
   - **Input**: Value = -1
-  - **Expected Outcome**: Method operates correctly.
+  - **Expected Outcome**: -1.0
   - **Status**: Pass
 
 - **testInsideConstrain**
 
   - **Objective**: Check the `constrain` method's effectiveness for values within the range.
-  - **Input**: 0.5
-  - **Expected Outcome**: Method operates correctly.
+  - **Input**: 0.0
+  - **Expected Outcome**: 0.0
   - **Status**: Pass
 
 - **testDecimalInsideConstrain**
   - **Objective**: Verify the `constrain` method's functionality for decimal values within the range.
   - **Input**: 0.5
-  - **Expected Outcome**: Method operates correctly.
+  - **Expected Outcome**: 0.5
   - **Status**: Pass
 
 #### Shift Method Testing
@@ -173,27 +173,27 @@ The `calculateColumnTotal` method was examined under various conditions to ensur
 - **calculateColumnTotalForTwoValues**
 
   - **Objective**: Confirm normal operation with two positive values.
-  - **Input**: Two positive values
-  - **Expected Outcome**: Correct sum calculated.
+  - **Input**: {7.5, 2.5}
+  - **Expected Outcome**: 10.0
   - **Status**: Pass
 
 - **calculateColumnTotalForThreeValues**
 
   - **Objective**: Test the method's ability to sum three positive values.
-  - **Input**: Three positive values
-  - **Expected Outcome**: Correct sum calculated.
+  - **Input**: {7.5, 2.5, 5.0}
+  - **Expected Outcome**: 15.0
   - **Status**: Pass
 
 - **calculateColumnTotalForNegativeValues**
 
   - **Objective**: Evaluate the method's handling of two negative values.
-  - **Input**: Two negative values
-  - **Expected Outcome**: Correct sum calculated.
+  - **Input**: {-5.0, -2.2}
+  - **Expected Outcome**: -7.2
   - **Status**: Pass
 
 - **calculateColumnTotalForWrongInput**
   - **Objective**: Check if the method adheres to Javadoc specifications when input is incorrect.
-  - **Input**: Invalid input
+  - **Input**: {null, -2.5}
   - **Expected Outcome**: Method returns 0.
   - **Status**: Fail
 
