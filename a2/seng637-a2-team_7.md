@@ -2,14 +2,13 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#: 7      |     |
-| ---------------- | --- |
-| Student Names:   |     |
-| Benjamin Reid    |     |
-| Carissa Chung    |     |
-| Christian Valdez |     |
-| Alton Wong       |     |
-| Braden Tink      |     |
+| Group #: 07      |
+| ---------------- |
+| Benjamin Reid    |
+| Carissa Chung    |
+| Christian Valdez |
+| Alton Wong       |
+| Braden Tink      |
 
 # 1) Introduction
 
@@ -17,9 +16,58 @@ To increase our knowledge of software testing (and Java in particular), we are l
 
 # 2) Detailed description of unit test strategy
 
-// including the input partitions you have designed
+### Overview
 
-To properly test the provided software, we will be unit testing the Range and DataUtilites classes. Each of these classes has several methods which will be tested (5 from each). Black box testing will be used, so the javadoc information will be used to design the tests to ensure all the functionality is met. The javadoc explains how the methods should function, so the test cases can try this functionality to determine if the method works as intended. For example, when looking at a range of values we will test above and below this range, at the limits of this range, and within the bounds of the range to ensure all criteria are met.
+We're testing two classes:
+
+- `Range`: Deals with numeric ranges.
+- `DataUtilities`: Handles data set operations.
+
+We'll use JUnit 4 for tests and jMock for mocking.
+
+### Test Strategies
+
+1. **Equivalence Class Testing**
+
+   - Test different types of valid inputs as representatives of larger groups.
+   - For `Range`: Positive, negative, and zero values.
+   - For `DataUtilities`: Various dataset sizes and value types.
+
+2. **Boundary Value Analysis**
+
+   - Focus on the edge cases for inputs.
+   - For `Range`: Test the exact start and end points.
+   - For `DataUtilities`: Test with minimum and maximum size datasets.
+
+3. **Robustness Testing**
+
+   - Check how the system handles slightly out-of-range inputs.
+   - Test `Range` and `DataUtilities` with inputs just outside expected ranges.
+
+4. **Worst Case Testing**
+   - Test with the most complex or extreme input scenarios.
+   - Combine multiple operations or use extreme values.
+
+### Mocking Strategy
+
+- Use jMock for `Values2D` and `KeyedValues` in `DataUtilities`.
+- Example:
+  ```java
+  Mockery context = new Mockery();
+  final Values2D values = context.mock(Values2D.class);
+  ```
+- Note: Mocking focuses on method interactions, not full behavior.
+
+### Test Case Development
+
+- Write clear, single-purpose test cases.
+- Name tests descriptively, e.g., `testPositiveRangeValues`, `testDataUtilitiesWithEmptyDataset`.
+
+### Execution & Review
+
+- Run tests against `jfreechart-1.0.19.zip`.
+- Expect some failures due to intentional defects.
+- Review and adjust tests as needed based on results.
 
 # 3) Test cases developed
 
