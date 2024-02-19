@@ -12,8 +12,9 @@ Group 7's assignment repo for SENG-637 ✔️
 
 ## 📂 Folder Structure
 
-- 📚 **A2 (Maven Project)**
+- 📚 **a2 (Java files)**
 
 ## 🛠️ Tools & Technologies
 
-This Maven project was created using Eclipse.
+- JUnit 4
+- jMock
