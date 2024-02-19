@@ -53,9 +53,13 @@ public class RangeShiftTest {
     }
     
     @Test
-    public void testShiftWithLargeDelta() {
+    public void testShiftWithLargeDeltaLowerBound() {
         assertEquals("Lower bound after large shift should be correct",
                 999999, largeShiftedRange.getLowerBound(), .000000001d);
+    }
+    
+    @Test
+    public void testShiftWithLargeDeltaUpperBound() {
         assertEquals("Upper bound after large shift should be correct",
                 1000001, largeShiftedRange.getUpperBound(), .000000001d);
     }
@@ -68,20 +72,20 @@ public class RangeShiftTest {
     }
    
     @Test
-    public void testCentralValue() {
+    public void testPositiveShiftedCentralValue() {
     	double shiftedCentralValue = positiveShiftedRange.getCentralValue();
         assertEquals("Shifted central value should be 2",
                 2.0, shiftedCentralValue, .000000001d);
     }
     
     @Test
-    public void testIntersect() {
+    public void testPositiveShiftedIntersect() {
         assertEquals("Shifted Range shouold intersect.",
                 true, positiveShiftedRange.intersects(1, 3));
     }  
     
     @Test
-    public void testNoIntersect() {
+    public void testPositiveShiftedNoIntersect() {
         assertEquals("Shifted Range shouold intersect.",
                 false, positiveShiftedRange.intersects(4, 6));
     }  
@@ -100,8 +104,17 @@ public class RangeShiftTest {
     @Test
     public void testShiftToDoubleLimits() {
         Range baseRange = new Range(1e307, 1e307 + 10);
-        Range shiftedRange = Range.shift(baseRange, 1e307);
-        assertTrue("After a large shift, range should not collapse to a point",
-                   shiftedRange.getLength() > 0);
+        double shiftValue = 1e307;
+        Range shiftedRange = Range.shift(baseRange, shiftValue);
+
+        double expectedLength = 10; // The length should remain unchanged after the shift
+        double actualLength = shiftedRange.getLength();
+
+        // Check that the range has not collapsed
+        assertTrue("After a large shift, range should not collapse to a point", actualLength > 0);
+
+        // Additionally, check if the length remains as expected
+        assertEquals("The length of the range after shifting should remain unchanged",
+                     expectedLength, actualLength, 0.00001d);
     }
 }
