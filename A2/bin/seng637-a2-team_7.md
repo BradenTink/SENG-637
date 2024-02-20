@@ -219,33 +219,6 @@ The `shift` method was assessed through various tests to verify its capability t
   - **Expected Outcome**: Range does not collapse to a point after shift.
   - **Status**: Fail, resulted precision loss
 
-#### Lowerbound Method Testing
-The `getLowerBound` method was assessed through various tests to verify its capability to return the lowerbound of the range of values.
-
-- **testLowerboundNegative**
-  - **Objectives**: Verify that the lowerbound will be returned if that value is a negative value.
-  - **Input**: Range from -10 to 10
-  - **Expected outcome**: -10
-  - **Status**: Pass
-
-- **testLowerBoundZero**
-  - **Objectives**: Verify that the function can return a zero value if that is the lowerbound of the range.
-  - **Input**: Range from 0 to 10
-  - **Expected outcome**: 0
-  - **Status**: Pass
-
-- **testLowerBoundPositive**
-  - **Objectives**: Verify the lowerbound will be returned if that value is a positive value.
-  - **Input**: Range from 1 to 10
-  - **Expected outcome**: 1
-  - **Status**: Pass
-
-- **testEqualUpperAndLowerBound** 
-  - **Objectives**: Verify that the lowerbound will be returned if the upper and lower range values are equal.
-  - **Input**: Range from 2 to 2
-  - **Expected outcome**: 2
-  - **Status**: Pass
-
 ### DataUtilities Class Tests
 
 #### calculateColumnTotal Method Testing
@@ -279,6 +252,8 @@ The `calculateColumnTotal` method was examined under various conditions to ensur
   - **Expected Outcome**: Method returns 0.
   - **Status**: Fail, got 3.5
 
+### DataUtilities Class Tests
+
 #### calculateRowTotal Method Testing
 
 The `calculateRowTotal` method was examined under various conditions to ensure its capability to accurately sum row values.
@@ -302,35 +277,6 @@ The `calculateRowTotal` method was examined under various conditions to ensure i
   - **Input**: Mock `Values2D` object representing 1 row, with an attempt to calculate total for a non-existing row (row index 1).
   - **Expected Outcome**: The method should return a total of 0.0, indicating no valid row was processed.
   - **Status**: Pass
-
-#### createNumberArray Method Testing
-
-The `createNumberArray` method was examined under various conditions to ensure its capability to create a number array of double primatives. 
-
-- **testCreateNumberArrayWithValidInput**
-  - **Objective**: Evaluate the methods ability to create an array with valid positive inputs
-  - **Input**: Create an array of {1.0, 2.0, 3.0, 4.0}
-  - **Expected Outcome**: Array of {1.0, 2.0, 3.0, 4.0} created
-  - **Status**: Fail, the last index of the array is `null`
-
-- **testCreateNumberArrayWithEmptyInput**
-  - **Objective**: Evaluate the methods ability to create an empty array
-  - **Input**: Create an array of {}
-  - **Expected Outcome**: Empty Array created
-  - **Status**: Pass
-
-- **testCreateNumberArrayWithNullInput**
-  - **Objective**: Test to see if a null array will throw an error exception
-  - **Input**: DataUtilities.createNumberArray(null)
-  - **Expected Outcome**: InvalidParameterException - if invalid data object is passed in.
-  - **Status**: Pass, "java.lang.IllegalArgumentException" is thrown
-
-- **testCreateNumberArrayWithNegativeValues**
-  - **Obejctive**: Evaluate the methods ability to create an array with negative inputs
-  - **Input**: Create an array of {-1.0, -2.0, -3.0, -4.0}
-  - **Expected Outcome**: Array of {-1.0, -2.0, -3.0, -4.0} created.
-  - **Status**: Fail, the last index of the array created is `null`
-
 
 # 4) How the team work/effort was divided and managed
 
