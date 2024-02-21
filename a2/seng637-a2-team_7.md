@@ -246,6 +246,51 @@ The `getLowerBound` method was assessed through various tests to verify its capa
   - **Expected outcome**: 2
   - **Status**: Pass
 
+#### Length Method Testing 
+The `Length` method was asseded through varios test to verify its overall functionality. Adjuting the range to various start and end points as well as unit types to properly asses the method under a wide range of test case 
+
+- **testValidRange**
+  - **Objectives**: Verify the method works with a given interger set of values 
+  - **Input**: Range from 0 to 10 
+  - **Expected outcome**: 10 
+  - **Status**: Passed
+
+- **testFloatingPointRange**
+  - **Objectives**: Verify the methoid works given floating point values 
+  - **Input**: Range from 2.5 to 7.5 
+  - **Expected outcome**:  5
+  - **Status**:  Passed 
+
+- **testZeroLengthRange**
+  - **Objectives**: Verify the method works given a range of 0 
+  - **Input**: Range from 5 to 5 
+  - **Expected outcome**: 0 
+  - **Status**:  Passed 
+
+- **testNegativeStartRange**
+  - **Objectives**: Verify the the method works given a negative starting point 
+  - **Input**: Range from -2 to 0
+  - **Expected outcome**: 2
+  - **Status**:  Passed 
+
+- **testLargeValueRange**
+  - **Objectives**: Verfiy the method works given an a extermly large range 
+  - **Input**: Range from 0 to 10000000
+  - **Expected outcome**: 10000000
+  - **Status**:  Passed 
+
+- **testBoundaryRange**
+  - **Objectives**: Verify the method works given the smallest allowable length integer 
+  - **Input**: Range from 0 to 1 
+  - **Expected outcome**: 1 
+  - **Status**:  Passed 
+
+- **testRandomRange**
+  - **Objectives**: Verfiy the method works given a a random range values for both values 
+  - **Input**: Range from 3 to 18
+  - **Expected outcome**: 15 
+  - **Status**:  Passed 
+ 
 ### DataUtilities Class Tests
 
 #### calculateColumnTotal Method Testing
@@ -331,6 +376,38 @@ The `createNumberArray` method was examined under various conditions to ensure i
   - **Expected Outcome**: Array of {-1.0, -2.0, -3.0, -4.0} created.
   - **Status**: Fail, the last index of the array created is `null`
 
+#### createNumberArray Method Testing
+The `TestNumberArray2D` method was asseded through varios test to verify its overall functionality. Adjuting the input to the create function to properly test all use cases of the function.
+
+- **testCreateNumberArray2D**
+  - **Objective**: Verfiy the method is able to create a simple 3x3 matrix  
+  - **Input**: 2D array {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+  - **Expected Outcome**: 2D array: {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+  - **Status**: Failed, the last index of each row was `null` 
+
+- **testCreateNumberArrayEmpty2D**
+  - **Objective**: Verfiy the method is able to create an empty 2D array 
+  - **Input**: 2D array:  {{}, {}};
+  - **Expected Outcome**: 2D array:  {{}, {}};
+  - **Status**: Passed 
+
+- **testCreateNumberArraySecondColumnEmpty**
+  - **Objective**: Verfiy method is able to create an array given the second row being empty 
+  - **Input**: 2D array: {{1.0, 2.0, 3.0}, {}}; 
+  - **Expected Outcome**: 2D array: {{1.0, 2.0, 3.0}, {}};
+  - **Status**: Failed, the last index of the filled out row was `null` 
+
+- **testCreateNumberArrayFirstColumnEmpty**
+  - **Objective**: Verify method is able to create a array given the first row being empty 
+  - **Input**: 2D array: {{}, {4.0, 5.0, 6.0}};
+  - **Expected Outcome**: 2D array: {{}, {4.0, 5.0, 6.0}};
+  - **Status**: Failed, the last index of the filled out row was `null` 
+
+- **testCreateIrregularShapeArray2D**
+  - **Objective**: Verfiy the method is able to create a array given an IrregularShaped Array 
+  - **Input**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
+  - **Expected Outcome**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
+  - **Status**: Failed, the last index of the filled out row was `null` ,
 
 # 4) How the team work/effort was divided and managed
 
