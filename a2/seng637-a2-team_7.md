@@ -411,12 +411,12 @@ The `TestNumberArray2D` method was asseded through varios test to verify its ove
 
 # 4) How the team work/effort was divided and managed
 
-To let all group members gain experience with Junit, each member was assigned a method from both classes. Once testing files were created, the other members reviewed the files to ensure all testing cases from the javadocs were fully tested. All information was then added to the report markdown file.
+To let all group members gain experience with Junit, each member was assigned a method from both classes. Once testing files were created, the other members reviewed the files to ensure all testing cases from the javadocs were fully tested. All information was then added to the report markdown file. Each member then did a write-up on how the class was tested to help describe their testing methodology.
 
 # 5) Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
+During the assignment we found that while everything was straightforward, it was tricky to get used to the structure of the Junit tests. Once one or two were written though it was easy to replicate for the other conditions under test.
 
 # 6) Comments/feedback on the lab itself
 
-Text…
+The lab was a good practice on testing using black box techniques and Junit. It was fun to see how the tests failed.
