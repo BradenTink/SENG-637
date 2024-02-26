@@ -403,38 +403,38 @@ The `createNumberArray` method was examined under various conditions to ensure i
   - **Expected Outcome**: Array of {-1.0, -2.0, -3.0, -4.0} created.
   - **Status**: Fail, the last index of the array created is `null`
 
-#### createNumberArray Method Testing
-The `TestNumberArray2D` method was asseded through varios test to verify its overall functionality. Adjuting the input to the create function to properly test all use cases of the function.
+#### createNumberArray2D Method Testing
+The `TestNumberArray2D` method was assessed through various tests to verify its overall functionality. Adjusting the input to the create function to properly test all use cases of the function.
 
 - **testCreateNumberArray2D**
-  - **Objective**: Verfiy the method is able to create a simple 3x3 matrix  
-  - **Input**: 2D array {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
-  - **Expected Outcome**: 2D array: {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
-  - **Status**: Failed, the last index of each row was `null` 
+  - **Objective**: Verify the method is able to create a simple 3x3 matrix  
+  - **Input**: 2D array {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+  - **Expected Outcome**: 2D array: {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+  - **Status**: Failed, the last index of each row was `null`
 
 - **testCreateNumberArrayEmpty2D**
-  - **Objective**: Verfiy the method is able to create an empty 2D array 
+  - **Objective**: Verify the method is able to create an empty 2D array 
   - **Input**: 2D array:  {{}, {}};
   - **Expected Outcome**: 2D array:  {{}, {}};
   - **Status**: Passed 
 
 - **testCreateNumberArraySecondColumnEmpty**
-  - **Objective**: Verfiy method is able to create an array given the second row being empty 
+  - **Objective**: Verify method is able to create an array with the second row being empty 
   - **Input**: 2D array: {{1.0, 2.0, 3.0}, {}}; 
   - **Expected Outcome**: 2D array: {{1.0, 2.0, 3.0}, {}};
-  - **Status**: Failed, the last index of the filled out row was `null` 
+  - **Status**: Failed, the last index of the filled out row was `null`
 
 - **testCreateNumberArrayFirstColumnEmpty**
-  - **Objective**: Verify method is able to create a array given the first row being empty 
+  - **Objective**: Verify method is able to create an array with the first row being empty 
   - **Input**: 2D array: {{}, {4.0, 5.0, 6.0}};
   - **Expected Outcome**: 2D array: {{}, {4.0, 5.0, 6.0}};
-  - **Status**: Failed, the last index of the filled out row was `null` 
+  - **Status**: Failed, the last index of the filled out row was `null`
 
 - **testCreateIrregularShapeArray2D**
-  - **Objective**: Verfiy the method is able to create a array given an IrregularShaped Array 
-  - **Input**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
-  - **Expected Outcome**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
-  - **Status**: Failed, the last index of the filled out row was `null` ,
+  - **Objective**: Verify the method is able to create an array with an irregularly shaped array 
+  - **Input**: 2D array: {{1.0, 2.0}, {4.0, 5.0, 6.0, 7.0}};
+  - **Expected Outcome**: 2D array: {{1.0, 2.0}, {4.0, 5.0, 6.0, 7.0}};
+  - **Status**: Failed, the last index of the filled-out row was `null`
  
 #### getCumulativePercentages Method Testing
 The `getCumulativePercentages` was examined under various conditions to ensure its capability to calculate cumulative percentages from a KeyedValues input.
