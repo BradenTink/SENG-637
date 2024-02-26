@@ -12,7 +12,7 @@
 
 # 1) Introduction
 
-To increase our knowledge of software testing (and Java in particular), we are looking at Junit testing. This is a common technique to test Java code using the built-in functionality. The JFreeChart .jar files were provided for this assignment, and will be used as example classes for testing.
+To increase our knowledge of software testing (and Java in particular), we are looking at JUnit testing. This is a common technique to test Java code using the built-in functionality. The JFreeChart .jar files were provided for this assignment and will be used as example classes for testing.
 
 # 2) Detailed description of unit test strategy
 
@@ -483,12 +483,12 @@ The `getCumulativePercentages` was examined under various conditions to ensure i
 
 # 4) How the team work/effort was divided and managed
 
-To let all group members gain experience with Junit, each member was assigned a method from both classes. Once testing files were created, the other members reviewed the files to ensure all testing cases from the javadocs were fully tested. All information was then added to the report markdown file. Each member then did a write-up on how the class was tested to help describe their testing methodology.
+To let all group members gain experience with JUnit, each member was assigned a method from both classes. Once testing files were created, the other members reviewed the files to ensure all testing cases from the javadocs were fully tested. All information was then added to the report markdown file. Each member then did a write-up on how the class was tested to help describe their testing methodology.
 
 # 5) Difficulties encountered, challenges overcome, and lessons learned
 
-During the assignment we found that while everything was straightforward, it was tricky to get used to the structure of the Junit tests. Once one or two were written though it was easy to replicate for the other conditions under test.
+During the assignment we found that while everything was straightforward, it was tricky to get used to the structure of the JUnit tests. Once one or two were written though it was easy to replicate for the other conditions under test.
 
 # 6) Comments/feedback on the lab itself
 
-The lab was a good practice on testing using black box techniques and Junit. It was fun to see how the tests failed.
+The lab was a good practice on testing using black box techniques and JUnit. It was fun to see how the tests failed.
