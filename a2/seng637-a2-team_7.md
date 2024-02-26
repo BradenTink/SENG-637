@@ -246,6 +246,33 @@ The `getLowerBound` method was assessed through various tests to verify its capa
   - **Expected outcome**: 2
   - **Status**: Pass
 
+#### Upperbound Method Testing
+The `getUpperBound` method was assessed through various tests to verify its capability to return the upperbound of the range of values.
+
+- **testUpperBoundNegative**
+  - **Objectives**: Verify that the upperbound will be returned if that value is a negative value.
+  - **Input**: Range from -20 to -10
+  - **Expected outcome**: -10
+  - **Status**: Fail, got -10
+
+- **testLowerBoundZero**
+  - **Objectives**: Verify that the function can return a zero value if that is the upperbound of the range.
+  - **Input**: Range from -10 to 0
+  - **Expected outcome**: 0
+  - **Status**: Fail, got -10
+
+- **testLowerBoundPositive**
+  - **Objectives**: Verify the upperbound will be returned if that value is a positive value.
+  - **Input**: Range from 1 to 10
+  - **Expected outcome**: 10
+  - **Status**: Fail, got 1
+
+- **testEqualUpperAndLowerBound** 
+  - **Objectives**: Verify that the upperbound will be returned if the upper and lower range values are equal.
+  - **Input**: Range from 2 to 2
+  - **Expected outcome**: 2
+  - **Status**: Pass
+
 #### Length Method Testing 
 The `Length` method was asseded through varios test to verify its overall functionality. Adjuting the range to various start and end points as well as unit types to properly asses the method under a wide range of test case 
 
