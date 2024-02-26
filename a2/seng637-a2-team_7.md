@@ -441,21 +441,39 @@ The `getCumulativePercentages` was examined under various conditions to ensure i
 
 - **testCumulativePercentagesPositive**
   - **Objective**: Evaluate the method is able to calculate cumulative percentages for all positive values  
-  - **Input**: DefaultKeyedValues: [(0, 5), (1, 9), (2, 2)]
-  - **Expected Outcome**: DefaultKeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
+  - **Input**: KeyedValues: [(0, 5), (1, 9), (2, 2)]
+  - **Expected Outcome**: KeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
   - **Status**: Fail, got [(0, 0.4545), (1, 1.2727), (2, 1.4545)]
 
 - **testCumulativePercentagesMixed**
   - **Objective**: Evaluate the method is able to calculate cumulative percentages for some negative values 
-  - **Input**: DefaultKeyedValues: [(0, 5), (1, -9), (2, 2)]
-  - **Expected Outcome**: DefaultKeyedValues: [(0, -2.5), (1, 2.0), (2, 1.0)]
+  - **Input**: KeyedValues: [(0, 5), (1, -9), (2, 2)]
+  - **Expected Outcome**: KeyedValues: [(0, -2.5), (1, 2.0), (2, 1.0)]
   - **Status**: Fail, got [(0, -0.7143), (1, 0.5714), (2, 0.2857)]
 
 - **testCumulativePercentagesNegative**
   - **Objective**: Evaluate the method is able to calculate cumulative percentages for all negative values 
-  - **Input**: DefaultKeyedValues: [(0, -5), (1, -9), (2, -2)]
-  - **Expected Outcome**: DefaultKeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
+  - **Input**: KeyedValues: [(0, -5), (1, -9), (2, -2)]
+  - **Expected Outcome**: KeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
   - **Status**: Fail, got [(0, 0.4545), (1, 1.2727), (2, 1.4545)]
+ 
+- **testCumulativePercentagesOneKV**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for one key value pair 
+  - **Input**: KeyedValues: [(0, 5)]
+  - **Expected Outcome**: KeyedValues: [(0, 1.0)]
+  - **Status**: Fail, got [(0, Infinity)]
+ 
+- **testCumulativePercentagesAllZero**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for values of all zero 
+  - **Input**: KeyedValues: [(0, 0), (1, 0), (2, 0)]
+  - **Expected Outcome**: KeyedValues: [(0, NaN), (1, NaN), (2, NaN)]
+  - **Status**: Pass
+ 
+- **testCumulativePercentagesSomeZero**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for some values of zero 
+  - **Input**: KeyedValues: [(0, 0), (1, 0), (2, 0), (3, 1)]
+  - **Expected Outcome**: KeyedValues: [(0, 0), (1, 0), (2, 0), (3, 1.0)]
+  - **Status**: Pass
 
 - **testCumulativePercentagesNull**
   - **Objective**: Evaluate the method's handling of null input 
