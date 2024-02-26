@@ -435,6 +435,33 @@ The `TestNumberArray2D` method was asseded through varios test to verify its ove
   - **Input**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
   - **Expected Outcome**: 2D array: {{1.0, 2.0}, {4.0,5.0,6.0,7.0}};
   - **Status**: Failed, the last index of the filled out row was `null` ,
+ 
+#### getCumulativePercentages Method Testing
+The `getCumulativePercentages` was examined under various conditions to ensure its capability to calculate cumulative percentages from a KeyedValues input.
+
+- **testCumulativePercentagesPositive**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for all positive values  
+  - **Input**: DefaultKeyedValues: [(0, 5), (1, 9), (2, 2)]
+  - **Expected Outcome**: DefaultKeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
+  - **Status**: Fail, got [(0, 0.4545), (1, 1.2727), (2, 1.4545)]
+
+- **testCumulativePercentagesMixed**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for some negative values 
+  - **Input**: DefaultKeyedValues: [(0, 5), (1, -9), (2, 2)]
+  - **Expected Outcome**: DefaultKeyedValues: [(0, -2.5), (1, 2.0), (2, 1.0)]
+  - **Status**: Fail, got [(0, -0.7143), (1, 0.5714), (2, 0.2857)]
+
+- **testCumulativePercentagesNegative**
+  - **Objective**: Evaluate the method is able to calculate cumulative percentages for all negative values 
+  - **Input**: DefaultKeyedValues: [(0, -5), (1, -9), (2, -2)]
+  - **Expected Outcome**: DefaultKeyedValues: [(0, 0.3125), (1, 0.875), (2, 1.0)]
+  - **Status**: Fail, got [(0, 0.4545), (1, 1.2727), (2, 1.4545)]
+
+- **testCumulativePercentagesNull**
+  - **Objective**: Evaluate the method's handling of null input 
+  - **Input**: null
+  - **Expected Outcome**: "Null 'data' argument."
+  - **Status**: Pass
 
 # 4) How the team work/effort was divided and managed
 
