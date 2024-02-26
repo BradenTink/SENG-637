@@ -255,13 +255,13 @@ The `getUpperBound` method was assessed through various tests to verify its capa
   - **Expected outcome**: -10
   - **Status**: Fail, got -10
 
-- **testLowerBoundZero**
+- **testUpperBoundZero**
   - **Objectives**: Verify that the function can return a zero value if that is the upperbound of the range.
   - **Input**: Range from -10 to 0
   - **Expected outcome**: 0
   - **Status**: Fail, got -10
 
-- **testLowerBoundPositive**
+- **testUpperBoundPositive**
   - **Objectives**: Verify the upperbound will be returned if that value is a positive value.
   - **Input**: Range from 1 to 10
   - **Expected outcome**: 10
