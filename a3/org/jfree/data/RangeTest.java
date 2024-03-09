@@ -217,10 +217,18 @@ public class RangeTest {
     @Test
     public void testRepeatedShifts() {
         Range initialRange = new Range(-100, 100);
-        Range shiftedRight = Range.shift(initialRange, 200);
-        Range shiftedLeftBack = Range.shift(shiftedRight, -200);
+        Range shiftedRight = Range.shift(initialRange, 200, true);
+        Range shiftedLeftBack = Range.shift(shiftedRight, -200, true);
         assertEquals("Shifting right then back should return to original lower bound",
                      initialRange.getLowerBound(), shiftedLeftBack.getLowerBound(), 0.000000001d);
+    }
+    @Test
+    public void testNoZeroCrossingWithRangeZero() {
+    	//Grabs line 416 in the range class
+    	Range zeroCrossRange = new Range(0, 0);
+    	Range shiftedRight = Range.shift(zeroCrossRange, 0);
+    	assertEquals("Should return a range of five", 0, shiftedRight.getLength(),0.000000001d);
+    	
     }
     
     @Test
@@ -381,6 +389,32 @@ public class RangeTest {
     public void testToString() {
         assertEquals("Check toString.",
                 "Range[-1,1]", exampleRange.toString());
+    }
+    @Test
+    public void testEqualsOfDifObjects() {
+    	Range objRange = new Range(-5, 5);
+    	Double d1 = 3.0;
+    	d1.equals(objRange);
+    	objRange.equals(d1);
+
+    	assertEquals("Check to see if range object is the same Double object should be false", false, objRange.equals(d1));    	
+    }
+    @Test
+    public void testEqualsOfSameObjects() {
+    	Range objRange = new Range(-5, 5);
+    	Range objRange2 = new Range(-4, 5);
+    	objRange.equals(objRange2);
+   
+    	assertEquals("Check to see if two lower bound values are the same should be false", false, objRange.equals(objRange2));
+    	
+    }
+    @Test
+    public void testEqualsOfSameObjectsLowerMatching() {
+    	Range objRange = new Range(-4, 5);
+    	Range objRange2 = new Range(-4, 4);
+    	objRange.equals(objRange2);
+    	
+    	assertEquals("Check to see if two lower bound values are the same should be false", false, objRange.equals(objRange2));
     }
 
     @After
