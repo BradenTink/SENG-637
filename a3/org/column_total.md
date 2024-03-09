@@ -16,42 +16,50 @@
 
 **Test Case 1: Data with null Values2D object**
 
-- **Objective**: To cover the null check at the beginning of the method.
-- **Input**: `data = null`, `column = any valid integer`, `validRows = any valid int array`.
+- **Objective**: Error out on Values2D data
+- **Input**: `data = null`, `column = 6`, `validRows = 9`.
 - **Expected Result**: The method throws an exception for the null `data` object.
 
-| Test Case         | Execution Path | DU Pairs | Coverage |
-| ----------------- | -------------- | -------- | -------- |
-| checkForNullValue | [1-9]          |          | 20%      |
+| Test Case               | Execution Path | DU Pairs | Coverage |
+| ----------------------- | -------------- | -------- | -------- |
+| Check for null Values2D |                |          | 64.7%    |
 
 **Test Case 2: Data with an empty array of validRows**
 
 - **Objective**: To cover the scenario where the loop does not iterate even once.
-- **Input**: `data = valid Values2D object with any number of rows`, `column = any valid integer`, `validRows = empty array`.
+- **Input**: `data = positive 2D matrix`, `column = 6`, `validRows = empty array`.
 - **Expected Result**: The method returns `0.0`.
+
+| Test Case               | Execution Path | DU Pairs | Coverage |
+| ----------------------- | -------------- | -------- | -------- |
+| Check for null Values2D |                |          | 100%     |
 
 **Test Case 3: Data with validRows containing indices higher than rowCount**
 
-- **Objective**: To cover the false branch of the condition `if (row < rowCount)`.
-- **Input**: `data = valid Values2D object with 1 row`, `column = 0`, `validRows = array with elements greater than 1`.
+- **Objective**: To the case where the theres is more valid rows than matrix.
+- **Input**: `data = positive 2D matrix`, `column = 6`, `validRows > data.getRowCount()`.
 - **Expected Result**: The method returns `0.0` because the condition `row < rowCount` is false.
 
-**Test Case 4: Data with validRows and all non-null values**
+| Test Case               | Execution Path | DU Pairs | Coverage |
+| ----------------------- | -------------- | -------- | -------- |
+| Check for null Values2D |                |          | 20%      |
 
-- **Objective**: To cover the scenario where all data values are non-null and are summed.
-- **Input**: `data = valid Values2D object with multiple rows`, `column = 0`, `validRows = array with valid row indices`.
-- **Expected Result**: The method returns the sum of the values in the specified column for the validRows.
-
-**Test Case 5: Data with validRows and some null values**
+**Test Case 4: Data with validRows and some null values**
 
 - **Objective**: To cover the false branch of the condition `if (n != null)`.
-- **Input**: `data = valid Values2D object with multiple rows`, `column = 0`, `validRows = array with valid row indices where some rows contain null values`.
+- **Input**: `data = positive 2D matrix will null rows`, `column = 6`, `validRows <= data.getRowCount()`.
 - **Expected Result**: The method returns the sum of the non-null values in the specified column for the validRows.
 
-These test cases, when executed, should cover all the paths through the code:
+| Test Case               | Execution Path | DU Pairs | Coverage |
+| ----------------------- | -------------- | -------- | -------- |
+| Check for null Values2D |                |          | 100%     |
 
-- The null check (`ParamChecks.nullNotPermitted(data, "data")`).
-- The initialization of `total` to `0.0`.
-- The for-loop, including iterations where it processes and skips certain rows based on the `rowCount` check.
-- The addition of non-null values to `total`.
-- The return statement to exit the method with the correct total.
+**Test Case 5: Data with validRows and valid values 2D**
+
+- **Objective**: To cover all lines.
+- **Input**: `data = positive 2D matrix`, `column = 6`, `validRows <= data.getRowCount()`.
+- **Expected Result**: The method returns the sum of the column for the validRows.
+
+| Test Case               | Execution Path | DU Pairs | Coverage |
+| ----------------------- | -------------- | -------- | -------- |
+| Check for null Values2D |                |          | 100%     |
