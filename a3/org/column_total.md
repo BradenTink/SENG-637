@@ -20,6 +20,10 @@
 - **Input**: `data = null`, `column = any valid integer`, `validRows = any valid int array`.
 - **Expected Result**: The method throws an exception for the null `data` object.
 
+| Test Case         | Execution Path | DU Pairs | Coverage |
+| ----------------- | -------------- | -------- | -------- |
+| checkForNullValue | [1-9]          |          | 20%      |
+
 **Test Case 2: Data with an empty array of validRows**
 
 - **Objective**: To cover the scenario where the loop does not iterate even once.
