@@ -210,4 +210,109 @@ public class DataUtilitiesTest {
         double result = DataUtilities.calculateColumnTotal(values, column, validRows);
         assertEquals("The column total should be 10.0", 10.0, result, 0.00001d);
     }
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: calculateRowTotal(Values2D data, int row) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+	@Test 
+	public void calcRowTotalWithValidInputs(){
+		final int row = 0;
+    	final int[] validRows = {0, 1, 2};
+        mockingContext.checking(new Expectations() {{
+			// Setup 3 rows
+			oneOf(values).getRowCount(); will(returnValue(1));
+			
+			// Setup 3 columns
+			oneOf(values).getColumnCount(); will(returnValue(3));
+            
+			// Mocking the behavior for 3 rows and a specific column
+            oneOf(values).getValue(row, 0); will(returnValue(2.5));
+            oneOf(values).getValue(row, 1); will(returnValue(3.0));
+            oneOf(values).getValue(row, 2); will(returnValue(4.5));
+        }});
+        double result = DataUtilities.calculateRowTotal(values, row);
+        assertEquals("The column total should be 10.0", 10.0, result, 0.00001d);
+	}
+	
+	 /********************************************************************
+     * ******************************************************************
+     * * Test Suite: calculateRowTotal(Values2D data, int row) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+	@Test 
+	public void calcRowTotalWithNullInputs(){
+		final int row = 0;
+    	final int[] validRows = {0, 1, 2};
+        mockingContext.checking(new Expectations() {{
+			// Setup 3 rows
+			oneOf(values).getRowCount(); will(returnValue(1));
+			
+			// Setup 3 columns
+			oneOf(values).getColumnCount(); will(returnValue(3));
+            
+			// Mocking the behavior for 3 rows and a specific column
+            oneOf(values).getValue(row, 0); will(returnValue(null));
+            oneOf(values).getValue(row, 1); will(returnValue(null));
+            oneOf(values).getValue(row, 2); will(returnValue(null));
+        }});
+        double result = DataUtilities.calculateRowTotal(values, row);
+        assertEquals("The column total should be 0", 0, result, 0.00001d);
+	}
+	
+	 /********************************************************************
+     * ******************************************************************
+     * * Test Suite: calculateRowTotal(Values2D data, int row,
+             int[] validCols) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+	@Test 
+	public void calcRowTotalWithValidInputsSpecificCols(){
+		final int row = 0;
+    	final int[] validRows = {0, 1, 2};
+        mockingContext.checking(new Expectations() {{
+			// Setup 3 rows
+			oneOf(values).getRowCount(); will(returnValue(1));
+			
+			// Setup 3 columns
+			oneOf(values).getColumnCount(); will(returnValue(3));
+            
+			// Mocking the behavior for 3 rows and a specific column
+            oneOf(values).getValue(row, 0); will(returnValue(2.5));
+            oneOf(values).getValue(row, 1); will(returnValue(3.0));
+            oneOf(values).getValue(row, 2); will(returnValue(4.5));
+        }});
+        double result = DataUtilities.calculateRowTotal(values, row, validRows);
+        assertEquals("The column total should be 10", 10, result, 0.00001d);
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: createNumberArray(double[] data) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+    public void createNumberArray() {
+    	double[] inputData = {1.0, 2.0, 3.0, 4.0};
+        Number[] expected = {1.0, 2.0, 3.0, 4.0};
+        Number[] actual = DataUtilities.createNumberArray(inputData);
+        assertArrayEquals("The Number array should match the input double array", expected, actual);
+    }
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: createNumberArray2D(double[][] data) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+    public void createNumberArray2D() {
+    	double[][] input = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+		Number[][] expected = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+		Number[][] result = DataUtilities.createNumberArray2D(input);
+		assertArrayEquals("The 2D Number array should match the input 2D array", expected, result);
+
+    }
 }
