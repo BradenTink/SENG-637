@@ -51,6 +51,9 @@ public class DataUtilitiesTest {
 	        assertEquals(10.0, result, .000000001d);
 	
 	}
+	
+	 
+	 
 	 
 	 @Test //to determine if the method can sum up negative values
 	    public void calculateColumnTotalForNegativeValues() {
@@ -94,6 +97,7 @@ public class DataUtilitiesTest {
 	    Double result = DataUtilities.calculateColumnTotal(values, column);
 	    assertEquals("The column total should be 0.0", 10.0, result, 0.00001d);
 	}
+	
 	
 	@Test
 	public void calculateColumnTotalWithNullData() {
@@ -315,4 +319,139 @@ public class DataUtilitiesTest {
 		assertArrayEquals("The 2D Number array should match the input 2D array", expected, result);
 
     }
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalValidArrays(){
+    	double[][] arr1 = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+    	double[][] arr2 = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+    	assertEquals("The two arrays should be equal", true, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalANullValidArrays(){
+    	double[][] arr1 = null;
+    	double[][] arr2 = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+    	assertEquals("The two arrays should not be equal ", false, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalBNullValidArrays(){
+    	double[][] arr1 = {{1.0, 2.0, 3.0}, {4.0,5.0,6.0}};
+    	double[][] arr2 = null;
+    	assertEquals("The two arrays should not be equal ", false, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalBothNullValidArrays(){
+    	double[][] arr1 = null;
+    	double[][] arr2 = null;
+    	assertEquals("The two arrays should not be equal ", true, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalSizeDifRowArrays(){
+    	double[][] arr1 = {{1.0, 2.0}};
+    	double[][] arr2 = {{1.0, 2.0}, {4.0,5.0,6.0}};
+    	assertEquals("The two arrays should be equal", false, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: equal(double[][] a, double[][] b) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void equalSizeDifArrays(){
+    	double[][] arr1 = {{1.0}, {4.0,5.0}};
+    	double[][] arr2 = {{1.0, 2.0}, {4.0,5.0,6.0}};
+    	assertEquals("The two arrays should be equal", false, DataUtilities.equal(arr1, arr2));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: clone(double[][] source) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void validCloneCheck(){
+    	double[][] arr1 = {{1.0}, {4.0,5.0}};
+    	assertArrayEquals("The two arrays should be equal", arr1, DataUtilities.clone(arr1));
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: clone(double[][] source) *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+	public void cloneNullArray(){
+    	double[][] source2 = {{1.0, 2.0, 3.0},null,{7.0, 8.0, 9.0}};
+    	double[][] result2 = DataUtilities.clone(source2);
+    	assertArrayEquals("The two arrays should be equal", source2, result2);
+	}
+    /********************************************************************
+     * ******************************************************************
+     * * Test Suite: getCumulativePercentages(KeyedValues data)  *
+     * * Tester: Braden                                                  *
+     * ******************************************************************
+     ********************************************************************/
+    @Test
+    public void checkKeyedValue() {
+    	Mockery mockingContext = new Mockery();
+		final KeyedValues data = mockingContext.mock(KeyedValues.class);
+		mockingContext.checking(new Expectations() {
+			{
+				allowing(data).getItemCount();
+				will(returnValue(3));
+				allowing(data).getValue(0);
+				will(returnValue(5));
+				allowing(data).getValue(1);
+				will(returnValue(9));
+				allowing(data).getValue(2);
+				will(returnValue(2));
+				allowing(data).getKey(0);
+				will(returnValue(0));
+				allowing(data).getKey(1);
+				will(returnValue(1));
+				allowing(data).getKey(2);
+				will(returnValue(2));
+			}
+		});
+		
+		KeyedValues result = DataUtilities.getCumulativePercentages(data);
+		assertEquals(0.3125, result.getValue(0));
+	    assertEquals(0.875, result.getValue(1));
+	    assertEquals(1.0, result.getValue(2));
+    	
+    }
+   
+    
+   
+    
+    
 }
