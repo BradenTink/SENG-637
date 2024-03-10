@@ -416,7 +416,32 @@ public class RangeTest {
     	
     	assertEquals("Check to see if two lower bound values are the same should be false", false, objRange.equals(objRange2));
     }
+ 
 
+    @Test
+    public void testCombineIgnoringNaNFirstNaNRange() {
+        Range range1 = new Range(Double.NaN, Double.NaN);
+        Range range2 = new Range(1, 2);
+        assertEquals("Combining a NaN range with a non-NaN range should return the non-NaN range.",
+                range2, Range.combineIgnoringNaN(range1, range2));
+    }
+
+    @Test
+    public void testCombineIgnoringNaNSecondNaNRange() {
+        Range range1 = new Range(1, 2);
+        Range range2 = new Range(Double.NaN, Double.NaN);
+        assertEquals("Combining a non-NaN range with a NaN range should return the non-NaN range.",
+                range1, Range.combineIgnoringNaN(range1, range2));
+    }
+    
+    @Test
+    public void testCombineIgnoringNaNBoth() {
+    	Range range1 = new Range(Double.NaN, Double.NaN);
+        Range range2 = new Range(Double.NaN, Double.NaN);
+        assertEquals("Combining a NaN range with a NaN range should return the NaN range.",
+                range1, Range.combineIgnoringNaN(range1, range2));
+    }
+    
     @After
     public void tearDown() throws Exception {
     }
