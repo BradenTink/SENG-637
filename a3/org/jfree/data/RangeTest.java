@@ -10,8 +10,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jfree.data.Range;
-
 public class RangeTest {
     private Range exampleRange;
     private Range myRange;
@@ -440,6 +438,123 @@ public class RangeTest {
         Range range2 = new Range(Double.NaN, Double.NaN);
         assertEquals("Combining a NaN range with a NaN range should return the NaN range.",
                 range1, Range.combineIgnoringNaN(range1, range2));
+    }
+    
+    // Carissa
+    // Add tests for getLength() to improve coverage
+    @Test
+    public void testGetLengthDifferentBounds() {
+        Range range = new Range(-5, 10);
+        assertEquals("Length should be 15", 15, range.getLength(), 0.000000001d);
+    }
+
+    @Test
+    public void testGetLengthZeroLengthRange() {
+        Range range = new Range(7, 7);
+        assertEquals("Length should be 0 for zero-length range", 0, range.getLength(), 0.000000001d);
+    }
+
+    // Add tests for getLowerBound() and getUpperBound() to improve coverage
+    @Test
+    public void testGetLowerBoundDifferentRange() {
+        Range range = new Range(-3, 7);
+        assertEquals("Lower bound should be -3", -3, range.getLowerBound(), 0.000000001d);
+    }
+
+    @Test
+    public void testGetUpperBoundDifferentRange() {
+        Range range = new Range(-2, 8);
+        assertEquals("Upper bound should be 8", 8, range.getUpperBound(), 0.000000001d);
+    }
+
+    // Add tests for expand(Range, double, double) to improve coverage
+    @Test
+    public void testExpandWithNegativeValues() {
+        Range baseRange = new Range(-2, 2);
+        Range expandedRange = Range.expand(baseRange, -1, -1);
+        assertEquals("Expanded lower bound should be -3", -3, expandedRange.getLowerBound(), 0.000000001d);
+        assertEquals("Expanded upper bound should be 3", 3, expandedRange.getUpperBound(), 0.000000001d);
+    }
+
+    // Add tests for constrain(double) to improve coverage
+    @Test
+    public void testConstrainValueWithinRange() {
+        Range range = new Range(0, 10);
+        assertEquals("Constrained value should be 5", 5, range.constrain(5), 0.000000001d);
+    }
+
+    @Test
+    public void testConstrainValueAboveRange() {
+        Range range = new Range(0, 10);
+        assertEquals("Constrained value should be the upper bound (10)", 10, range.constrain(15), 0.000000001d);
+    }
+
+    @Test
+    public void testConstrainValueBelowRange() {
+        Range range = new Range(0, 10);
+        assertEquals("Constrained value should be the lower bound (0)", 0, range.constrain(-5), 0.000000001d);
+    }
+    
+    // Carissa's Tests (rough drafts)
+    @Test
+    public void testGetLengthPositiveRange() {
+        Range positiveRange = new Range(2, 5);
+        assertEquals("Length of positive range should be 3", 3, positiveRange.getLength(), 0.000000001d);
+    }
+
+    @Test
+    public void testGetLengthNegativeRange() {
+        Range negativeRange = new Range(-5, -2);
+        assertEquals("Length of negative range should be 3", 3, negativeRange.getLength(), 0.000000001d);
+    }
+
+    @Test
+    public void testGetLengthZeroLengthRange2() {
+        Range zeroLengthRange = new Range(1, 1);
+        assertEquals("Length of zero-length range should be 0", 0, zeroLengthRange.getLength(), 0.000000001d);
+    }
+
+    @Test
+    public void testGetLengthValidMixedBounds() {
+        Range mixedBoundsRange = new Range(-2, 2);
+        assertEquals("Length of valid mixed bounds range should be 4", 4, mixedBoundsRange.getLength(), 0.000000001d);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetLengthInvalidRangeReversedBounds() {
+        Range invalidRange = new Range(5, 2);
+        invalidRange.getLength(); // This should throw an IllegalArgumentException
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetLengthInvalidRangeEqualBounds() {
+        Range invalidRange = new Range(3, 3);
+        invalidRange.getLength(); // This should throw an IllegalArgumentException
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetLengthInvalidRangeEqualBoundsNegative() {
+        Range invalidRange = new Range(-3, -3);
+        invalidRange.getLength(); // This should throw an IllegalArgumentException
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetLengthInvalidRangeEqualBoundsZero() {
+        Range invalidRange = new Range(0, 0);
+        invalidRange.getLength(); // This should throw an IllegalArgumentException
+    }
+
+    @Test
+    public void testCombineIgnoringNaNWithRange2NaN() {
+        // Arrange
+        Range range1 = null;
+        Range range2 = new Range(Double.NaN, Double.NaN);
+
+        // Act
+        Range result = Range.combineIgnoringNaN(range1, range2);
+
+        // Assert
+        assertNull(result);
     }
     
     @After
