@@ -64,11 +64,40 @@ Full Output from the Pit Test Can be seen in this file:
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 
 # Explain your SELENUIM test case design process
+As a group we decided to perform Selenium testing on homedepot.ca using the Selenium IDE. We decided to test functionality that would be often be used by everyday users. We excluded making purchases from the test plan. 
+Here is a list functions that were tested from the website:
+- Login/Logout
+- Adding/Removing items from cart
+- Changing the preferred store
+- Testing the chat functionality
+- Filtering products
+- Searching for products
+- Switching the website language
+
+The selenium IDE test cases can be found [here](SENG637_A4.side)
 
 # Explain the use of assertions and checkpoints
+Assertions and checkpoints are used at specific points of the test case to ensure the functionality is working as intended.
 
+In our test cases, each test case has at least one assert statement to ensure the functionality is implemented properly
+
+| Test Script Name        | Assert Statement                         |
+|-------------------------|------------------------------------------|
+| Add item to cart        | Asserts the cart qty is 1                |
+| Change 'My Store'       | Asserts the new store title is updated   |
+| Chat Functionality      | Asserts the chatbox is loaded            |
+| Login Test              | Asserts proper user is logged in         |
+| Login Test Fail         | Asserts error message occurs             |
+| Login/Logout Test       | Asserts logged out message occurs        |
+| Product Filtering       | Asserts filter is applied                |
+| Remove item from cart   | Asserts cart is empty                    |
+| Search Functionality    | Asserts search term is correctly applied |
+| Switch website language | Asserts language is switched             |
 # how did you test each functionaity with different test data
+Not all functionality required different test data.
+Only the login functionality was tested with an incorrect password to test the login test failure. 
 
+Other functionality such as product filtering and adding/removing items to the cart cannot be tested with different data.
 # How the team work/effort was divided and managed
 
 # Difficulties encountered, challenges overcome, and lessons learned
