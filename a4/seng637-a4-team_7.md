@@ -53,6 +53,11 @@ Range Testing from Assignment 3 Mutation Results:
 
 <img width="607" alt="image" src="https://github.com/seng637-Winter/seng637-a4-breid2/assets/49459800/38263c16-1432-4271-9992-760e0fee1642">
 
+
+Data Utilities Testing from Assignment 3 Mutation Results: 
+
+<img width="607" alt="image" src="https://github.com/seng637-Winter/seng637-a4-BradenTink/blob/main/Screenshot%202024-03-21%20181845.png>
+
 Full Output from the Pit Test Can be seen in this file:
 [Output of Range Test](RangeMutationTest.xlsx)
 # Analysis drawn on the effectiveness of each of the test classes
