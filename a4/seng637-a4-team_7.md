@@ -56,11 +56,11 @@ Range Testing from Assignment 3 Mutation Results:
 
 Data Utilities Testing from Assignment 3 Mutation Results: 
 
-<img width="607" alt="image" src="https://github.com/seng637-Winter/seng637-a4-BradenTink/blob/342f684363b3e00b3207d6c10124d88ef64637ad/Screenshot%202024-03-21%20181845.png>
+<img width="607" alt="image" src="https://github.com/seng637-Winter/seng637-a4-BradenTink/blob/342f684363b3e00b3207d6c10124d88ef64637ad/Screenshot%202024-03-21%20181845.png'>
 
 Full Output from the Pit Test Can be seen in this file:
 [Output of Range Test](RangeMutationTest.xlsx)
-# Analysis drawn on the effectiveness of each of the test classes
+# Analysis drawn on the effectiveness of each of the test classe"
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
 
