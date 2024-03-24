@@ -12,6 +12,9 @@
 | Alton Wong               |
 
 # Introduction
+Mutation testing is a white-box method of testing which tests both the code, as well as the unit tests (such as in assignment 3). Mutations (changes to the code or variables) are introduced to see how the unit tests handle this. The mutations can slip through the testing (Survive) or can be caught by the testing (Killed).
+
+GUI testing is the process of testing and interacting with the GUI portion of the code, rather than writing directly for the code base. For this assignment Selenium was used to test the web interface of a website.
 
 # Analysis of 10 Mutants of the Range class 
 The following mutants were found in the Range Class:
@@ -64,10 +67,15 @@ Full Output from the Pit Test Can be seen in this file:
 
 [Output of DataUtilities Test](DataUtilitiesMutationTest.xlsx)
 # Analysis drawn on the effectiveness of each of the test classe"
+Overall the test cases were fairly effective. The Range test had a line coverage of 98%, a mutation coverage of 73%, and a test strength of 74%. For DataUtilities it had a line coverage of 88%, mutation coverage of 73%, and a test strength of 82%. This shows that line coverage is good for both tests, and mutation coverage is good, but could be improved. There were several mutations for both classes that survived, so those should be investigated to ensure the test suite is a comprehensive as possible. 
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+Equivalent mutants are mutations in which the function is the same as the original. As such they are often not killed since the function of the code remains in place. This is illustrated by mutation 4 listed above, where the change in value did not change the outcome of the comparison. Mutations such as these make it almost impossible to get a 100% score since these mutations are not always real issues. If these equivalent mutations are identified and removed, then the score can increase. 
+
+Detecting equivalent mutations is not a simple task, but some types might be able to be caught more than others. For example when mutating a value, if that value is being used in a comparison, and the comparison gives the same result, then you likely have an equivalent mutant. Changing a conditional like an equality check will typically not be an equivalent mutant since the path through the code is now different.
 
 # A discussion of what could have been done to improve the mutation score of the test suites
+To improve the score, equivalent mutants can be removed, so that false failures are no longer counted towards the score. Another option would be to add more tests to the suite to ensure more mutants are covered.
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is useful for not only checking the code, but checking the testing process. 
