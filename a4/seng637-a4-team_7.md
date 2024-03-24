@@ -59,7 +59,10 @@ Data Utilities Testing from Assignment 3 Mutation Results:
 <img width="607" alt="image" src="https://github.com/seng637-Winter/seng637-a4-BradenTink/blob/342f684363b3e00b3207d6c10124d88ef64637ad/Screenshot%202024-03-21%20181845.png">
 
 Full Output from the Pit Test Can be seen in this file:
+
 [Output of Range Test](RangeMutationTest.xlsx)
+
+[Output of DataUtilities Test](DataUtilitiesMutationTest.xlsx)
 # Analysis drawn on the effectiveness of each of the test classe"
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
@@ -67,7 +70,16 @@ Full Output from the Pit Test Can be seen in this file:
 # A discussion of what could have been done to improve the mutation score of the test suites
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+Mutation testing is useful for not only checking the code, but checking the testing process. 
 
+Advantages:
+- Can find new bugs/issues
+- Fairly automated
+- Provides a second layer of testing after unit test
+Disadvantages:
+- Can take a while to run
+- Lots of results to analyze
+  
 # Explain your SELENUIM test case design process
 As a group we decided to perform Selenium testing on homedepot.ca using the Selenium IDE. We decided to test functionality that would be often be used by everyday users. We excluded making purchases from the test plan. 
 Here is a list functions that were tested from the website:
@@ -104,7 +116,10 @@ Only the login functionality was tested with an incorrect password to test the l
 
 Other functionality such as product filtering and adding/removing items to the cart cannot be tested with different data.
 # How the team work/effort was divided and managed
+The team members looked at both the mutation testing and the Selenium testing. This way the students could be familiar with both. The mutation testing was split between some of the members, with half doing Range and half doing DataUtilities. Then for the Selenium testing this was done independently by the students, and then pulled together into the final report.
 
 # Difficulties encountered, challenges overcome, and lessons learned
+Initially there was some difficulty in getting the mutation testing to run, but that turned out to be environment setup issues. After that the process went well. Being able to see how these different mutations affected the program was interesting, and came with some interesting outcomes.
 
 # Comments/feedback on the assignment itself
+The assignment was good, was interesting to actually work with some of these testing tools. Overall instructions were clear, but some of the analysis/discussion was a bit open ended, so we were not quite sure the best way to answer the questions.
