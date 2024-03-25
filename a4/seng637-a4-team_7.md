@@ -84,6 +84,7 @@ Advantages:
 - Can find new bugs/issues
 - Fairly automated
 - Provides a second layer of testing after unit test
+
 Disadvantages:
 - Can take a while to run
 - Lots of results to analyze
