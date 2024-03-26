@@ -77,33 +77,33 @@ Detecting equivalent mutations is not a simple task, but some types might be abl
 # A discussion of what could have been done to improve the mutation score of the test suites
 To improve the score, equivalent mutants can be removed, so that false failures are no longer counted towards the score. In Range, the following mutants can be removed for being equivalent:
 
-Line 91 Mutant 6-9, these simply increment the value at the message, and don't affect the function.
+Line 91 Mutant 4-7, these simply increment the value at the message, and don't affect the function.
 
-Line 92 Mutant 8-11, this again is a simple increment in the message, and don't affect the function.
+Line 92 Mutant 5-8, this again is a simple increment in the message, and don't affect the function.
 
-Line 144 Mutants 5, 9, 10, 16, 18, 20, 21, 23, 24, 26, 28, 33, 38, 40, 44, 48, these change values or set the comparison, but only affect the outcome if the change is significantly different. In many cases the value still lands in the acceptable range to output the correct result.
+Line 144 Mutants 2-6, 8-22, these change values or set the comparison, but only affect the outcome if the change is significantly different. In many cases the value still lands in the acceptable range to output the correct result.
 
-Line 157 Mutants 3, 6, 9, 11, 13, 14, 15, 17, 18, 19, this line just checks if b0 is less than the lower value, so setting the value often does not change the function of the code.
+Line 157 Mutants 1-11, this line just checks if b0 is less than the lower value, so setting the value often does not change the function of the code.
 
-Line 158 Mutants 27-34, the return is a boolean, so changing the value that still results in the same boolean result is an equivalent mutant.
+Line 158 Mutants 1-13, the return is a boolean, so changing the value that still results in the same boolean result is an equivalent mutant.
 
-Line 161 Mutants 21, 23, 29, 32, 38-45, 47-50, 52, 53, this again is a return of a boolean, so incrementing the variable often doesn't change the outcome of the comparison, so the result is an equivalent mutant.
+Line 161 Mutants 8-21, this again is a return of a boolean, so incrementing the variable often doesn't change the outcome of the comparison, so the result is an equivalent mutant.
 
-Line 193 Mutants 1, 4, 6, 9, 10, 12, 14, 18, this is another boolean check, so incrementing the value, or changing from >= to > often results in an equivalent mutant.
+Line 193 Mutants 1-8, this is another boolean check, so incrementing the value, or changing from >= to > often results in an equivalent mutant.
 
-Line 255 Mutants 7-14, 22, 24, 26, 28, this is a NaN check, so incrementing or negating the values does not change the function and is an equivalent mutation.
+Line 255 Mutants 1-12, this is a NaN check, so incrementing or negating the values does not change the function and is an equivalent mutation.
 
-Line 277 Mutants 7-10, this line returns the minimum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
+Line 277 Mutants 1-4, this line returns the minimum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
 
-Line 287 Mutants 7-10, this line returns the maximum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
+Line 287 Mutants 1-4, this line returns the maximum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
 
-Line 388 Mutants 19-22, this line returns the maximum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
+Line 388 Mutants 1-4, this line returns the maximum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
 
-Line 391 Mutants 19-22, this line returns the minimum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
+Line 391 Mutants 1-4, this line returns the minimum of two values, so incrementing the larger value does not change the function and results in an equivalent mutation.
 
-Line 410 Mutants 7-10, this line checks that the value is less than zero, so an increment often doesn't change the result, meaning it is an equivalent mutant.
+Line 410 Mutants 4-7, this line checks that the value is less than zero, so an increment often doesn't change the result, meaning it is an equivalent mutant.
 
-Removing just these 100 equivalent mutants changes the score from being 917/1259=73% to 917/1159=79%.
+Removing just these 107 equivalent mutants changes the score from being 917/1259=73% to 917/1152=80%.
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is useful for not only checking the code, but checking the testing process. 
