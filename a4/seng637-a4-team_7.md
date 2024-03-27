@@ -105,6 +105,36 @@ Line 410 Mutants 4-7, this line checks that the value is less than zero, so an i
 
 Removing just these 107 equivalent mutants changes the score from being 917/1259=73% to 917/1152=80%.
 
+
+In Data Utilities, the following mutants can be removed for being equivalent:
+
+Line 76 Mutants 1-2, Changing the values of b did not change the function as they are getting compared to a null value so the are equivalent mutations
+	
+Line 85 Mutants 2-3, Incrementing the values in the function does not change the comparison jus the values being compared so they equivalent mutations
+	
+Line 89 Mutants 1-2, The return type being changed results in the same boolean being returned so they equivalent mutations 
+
+Line 133 Mutants 12-19, These mutations are incremeneting and decrementing the local value which leads to the same overall function being an equivalent mutation
+
+Line 158 Mutants 1,4-5, This line checks to see if the total is greater than 0 changing the value by incremeneting it by one does not often change the result and results in an equivalent mutation
+
+Line 172 Mutants 1-2, These muations are incremeneting and decrementing the returned value which does not lead to any changes in the functionality of the method leading to equivalent mutations
+
+Line 194 Mutants 12-19, These changes are adjusting how the function is incrementing the counter however as it will lead to the same final reuslt these are equivalent mutations 
+	
+Line 200 Mutants 1-2, These muations are incremeneting and decrementing the returned value which does not lead to any changes in the functionality of the method leading to equivalent mutations
+
+Line 221 Mutants 13-14, The mutations are incremeneting and decrementing the comparison where if the column count is less than 0 so looking at column count less than zero will lead to equivalent mutations 
+
+Line 248 Mutants 1-2, These mutations are incremeneting and decrementing the returned value of the function which leads a new value of the data being returned. It does not change the base functionality of the method so they are equivalent muations
+
+Line 291 Mutants 7,9, These changes dont effect the starting point of where to total the values however as its not missing any values the mutation would lead to the same end result. 
+
+Line 291 Mutants 12,14, These changes are adjusting how the function is incrementing the counter however as it will lead to the same final reuslt these are equivalent mutations 
+
+Removing just these 39 equivalent mutants changes the score from being 646/881=73% to 646/=77%.
+
+
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
 Mutation testing is useful for not only checking the code, but checking the testing process. 
 
