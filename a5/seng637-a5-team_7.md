@@ -12,7 +12,7 @@
 
 # Introduction
 
-Using failure data, we can assess the reliability of a system under test (SUT). Our group utilized the C-SFRAT reliability growth assessment tool to generate plots of the failure rate and reliability of the SUT. <Insert more later>
+Using failure data, we can assess the reliability of a system under test (SUT). Our group utilized the C-SFRAT reliability growth assessment tool to generate plots of the failure rate and reliability of the SUT. Reliability Demonstration Char (RDC) is a good method for checking whether the target mean time to failure (MTTF) is met. It is based on collecting failure data at various time points.
 
 # Assessment Using Reliability Growth Testing
 
