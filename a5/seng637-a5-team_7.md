@@ -42,6 +42,10 @@ Testing for this assessment utilized the C-SFRAT and followed the steps outlined
 
 ### Failure Intensity
 
+<img width="1075" alt="Screenshot_2024-04-17_at_10 32 38_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/fd831d9c-b4c1-43a0-8555-7bdafa345f65">
+
+![321737713-5eb206a2-bd0d-4a60-84c4-21e9f05f35ef](https://github.com/BradenTink/SENG-637/assets/69766712/f423b19c-65fc-4573-a7c8-82867b288498)
+
 | Interval | Trend                                                     |
 | -------- | --------------------------------------------------------- |
 | 0-4      | High failure intensity, decreasing trend                  |
