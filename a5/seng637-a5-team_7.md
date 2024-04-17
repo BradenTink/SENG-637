@@ -63,7 +63,29 @@ Explanation:
 
 - **25-32**: Post time 25, the failure counts are lower than the earlier spikes but show some fluctuation. This could suggest a stabilization in the number of failures, with ongoing discovery and fixing of defects as the testing progresses.
 
-#
+# Assessment Using Reliability Demonstration Chart
+
+<img width="1322" alt="Screenshot 2024-04-17 at 9 29 03 AM" src="https://github.com/BradenTink/SENG-637/assets/59784141/f42d3461-f5e6-4bcd-9ae0-3851694d8413">
+Figure X. Risk Profile selected for the failure data, beta = 0.1, alpha = 0.1, and gamma = 2.
+
+In determining the minimum Mean Time To Failure (MTTFmin) necessary for acceptance using the provided failure data from the dataset, failure-dataset-a5.csv, an iterative process was employed. This involved plotting the data and systematically adjusting the Failure Intensity Overload (FIO) values until all data points unequivocally surpassed the reject boundary and a single point is touching the reject boundary line (refer to Figure X below). It's worth noting that the discrimination ratio (gamma) used was 2, along with a developer's risk (alpha) of 0.1 and a user's risk (beta) of 0.1. By ensuring that the majority of data points reside within the accept boundary region, while allowing for a few to linger within the continue testing boundary, the integrity and reliability of the system are steadfastly maintained.
+
+![MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/cd1a97a7-263a-4949-b98f-4825c3b51cbe)
+Figure X. Reliability Demonstration Chart with MTTFmin of 0.182 intervals and a FIO of 170 failures per 31 intervals.
+
+Upon doubling the MTTFmin (0.365) and deriving the resultant RDC, its depiction on Figure X below yields a discernible outcome. It becomes evident that the system fails to meet the acceptability criteria, as a substantial proportion of data points reside distinctly above the boundary delineating the reject region. This observation indicates a deficiency in reliability, thus rendering the system unsuitable for deployment under the current conditions. The prevalence of data points beyond the reject region boundary underscores the imperative need for further optimization or recalibration to attain the requisite operational integrity and compliance with acceptability standards.
+
+![double_MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/c2c31220-b1f7-4b1c-a210-644dd804cfbf)
+Figure X. Reliability Demonstration Chart with MTTFmin of 0.365 intervals and a FIO of 85 failures per 31 intervals.
+
+Alternatively, when the MTTFmin was halved and the resulting data points were examined, a clear trend emerged: all of them fell within the acceptable range (see Figure X below). This straightforward observation indicates a significant improvement in system reliability, confirming its adherence to predefined acceptability standards. With the adjusted MTTF value now at 0.091, the system demonstrates a satisfactory level of acceptability, instilling confidence in its operational effectiveness and suitability for deployment. This underscores the importance of MTTF in gauging system reliability and emphasizes the impact of precise parameter adjustments on system performance and acceptance status.
+
+image![half_MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/b23f3cd6-e42e-4e01-ae91-713b2f0af364)
+Figure X. Reliability Demonstration Chart with MTTFmin of 0.091 intervals and a FIO of 340 failures per 31 intervals.
+
+The Reliability Demonstration Curve (RDC) is a powerful tool used to assess the reliability of systems and products, offering several advantages. One of its primary benefits is the clear visual representation it provides, allowing stakeholders to easily understand and interpret reliability data. This graphical depiction enables quantitative analysis, facilitating comparisons between different systems or products and aiding informed decision-making. Additionally, RDCs can predict failure rates over time by extrapolating the curve, which assists organizations in planning maintenance, replacements, or upgrades. Moreover, the standardization of RDCs within industries ensures consistent evaluation and comparison of reliability across various products or systems. Lastly, RDCs are commonly employed to assess compliance with reliability requirements specified in contracts, regulations, or standards, serving as a means to verify performance against predefined criteria.
+
+However, the use of RDCs is not without its limitations and drawbacks. Constructing an accurate RDC necessitates sufficient historical failure data, which may not always be available, particularly for new or complex systems. Moreover, RDCs typically assume a constant failure rate over time, which may not always hold true in real-world scenarios where failure rates may vary due to factors such as wear and tear, environmental conditions, or usage patterns. Consequently, RDCs may offer a general indication of reliability but may not capture all potential failure modes or factors influencing reliability, leading to inaccuracies in long-term predictions. Additionally, interpreting RDCs and understanding the implications of different curve shapes and parameters can be challenging for individuals without a background in reliability engineering or statistics. Finally, there is a risk of overconfidence in the reliability of a system if RDCs are solely relied upon for assessment, especially if uncertainties and limitations associated with the curve are not adequately considered. Therefore, while RDCs offer valuable insights into system reliability, they should be used judiciously in conjunction with other reliability assessment methods and considerations to ensure comprehensive and accurate evaluation.
 
 # Comparison of Results
 
