@@ -21,7 +21,10 @@ Using failure data, we can assess the reliability of a system under test (SUT). 
 The **Laplace test** was used to determine the trend in the failure rate of a system. Failure data were collected and plotted to achieve a **90% confidence level**. The **x-axis** displays the failure count, while the **y-axis** shows the Laplace value.
 
 <img width="889" alt="Screenshot_2024-04-17_at_10 26 29_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/451ecf0a-5a7d-4fc5-8b7e-5bcd30d190b7">
+Figure 1. Laplace Test for Failure Data
+<br>
 
+<br>
 When the rate of change is **positive**, this indicates that the time between failures is decreasing, suggesting that failures are occurring more frequently. This could imply that the system or component is degrading or undergoing a wear-out process. Conversely, a **negative rate of change** suggests that the time between failures is increasing, implying that failures are becoming less frequent.
 
 When the **Laplace value** is **above the red line**, it indicates that the system is likely becoming less reliable over time.
@@ -46,16 +49,18 @@ Models scoring the lowest in AIC or BIC are preferred for their blend of **simpl
 
 Analysis revealed that the **Discrete Weibull Type 3 (DW3) model with covariate F** led with an **AIC of 122.199** and a **BIC of 127.935**, followed by the **Geometric Model (GM) with covariate F**, which recorded an **AIC of 125.323** and a **BIC of 129.625**.
 
-| Model                                          | AIC     | BIC     |
-| ---------------------------------------------- | ------- | ------- |
-| Discrete Weibull Type 3 (DW3) with covariate F | 122.199 | 127.935 |
-| Geometric Model (GM) with covariate F          | 125.323 | 129.625 |
+| Model                | AIC     | BIC     |
+| -------------------- | ------- | ------- |
+| DW3 with covariate F | 122.199 | 127.935 |
+| GM with covariate F  | 125.323 | 129.625 |
 
 Below are the graphs for DW3 and GM. We can see that both models are fitting close to the true values.
 
 ![image](https://github.com/BradenTink/SENG-637/assets/69766712/eb064b32-60bc-44e0-956e-f2c99b3e29c3)
+Figure 2. MVF Graph for DW3 and GM
+<br>
 
-
+<br>
 **Observations:**
 
 - **Closeness to the Imported Data**: The lines follow the step function. This indicates that both models are likely providing a good fit to the observed data.
@@ -65,8 +70,15 @@ Below are the graphs for DW3 and GM. We can see that both models are fitting clo
 ### Failure Intensity
 
 <img width="1075" alt="Screenshot_2024-04-17_at_10 32 38_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/fd831d9c-b4c1-43a0-8555-7bdafa345f65">
+Figure 3. Failure intensity Graph
+<br>
 
-![image](https://github.com/BradenTink/SENG-637/assets/69766712/76bd58e6-0636-4811-b3e6-45bf555bc93f)
+<br>
+
+Figure 4. Failure intensity Graph with DW3 and GM
+<br>
+
+<br>
 
 | Interval | Trend                                                     |
 | -------- | --------------------------------------------------------- |
