@@ -92,9 +92,10 @@ However, the use of RDCs is not without its limitations and drawbacks. Construct
 # Discussion on Similarity and Differences of the Two Techniques
 
 # How the team work/effort was divided and managed
-
+Each team member tried both sections of the lab to try to get it to work. Since there were difficulties, the most complete of each section was used to assemble the final report.
 #
 
 # Difficulties encountered, challenges overcome, and lessons learned
-
+There were quite a few difficulties using CASRE and SRTAT. The provided excel sheet did not import well into SRTAT, and using CASRE was a bit tricky.
 # Comments/feedback on the lab itself
+The difficulties with CASRE and SRTAT made this lab the most frustrating, so the purpose of the lab was slightly lost in the difficulties with the tools.
