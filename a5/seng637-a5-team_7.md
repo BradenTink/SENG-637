@@ -21,7 +21,9 @@ Using failure data, we can assess the reliability of a system under test (SUT). 
 The **Laplace test** was used to determine the trend in the failure rate of a system. Failure data were collected and plotted to achieve a **90% confidence level**. The **x-axis** displays the failure count, while the **y-axis** shows the Laplace value.
 
 <img width="889" alt="Screenshot_2024-04-17_at_10 26 29_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/451ecf0a-5a7d-4fc5-8b7e-5bcd30d190b7">
+<br>
 Figure 1. Laplace Test for Failure Data
+
 <br>
 
 <br>
@@ -56,7 +58,8 @@ Analysis revealed that the **Discrete Weibull Type 3 (DW3) model with covariate 
 
 Below are the graphs for DW3 and GM. We can see that both models are fitting close to the true values.
 
-![image](https://github.com/BradenTink/SENG-637/assets/69766712/eb064b32-60bc-44e0-956e-f2c99b3e29c3)
+![Screenshot 2024-04-17 185119](https://github.com/BradenTink/SENG-637/assets/69766712/c13afce4-22e5-4b94-a478-1967853c4f43)
+
 Figure 2. MVF Graph for DW3 and GM
 <br>
 
@@ -74,7 +77,7 @@ Figure 3. Failure intensity Graph
 <br>
 
 <br>
-
+<img width="1075" alt="Screenshot_2024-04-17_at_10 32 38_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/421bc12f-4bd7-4337-8774-bda90fcd993d">
 Figure 4. Failure intensity Graph with DW3 and GM
 <br>
 
