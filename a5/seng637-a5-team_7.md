@@ -69,6 +69,7 @@ Explanation:
 <img width="1322" alt="Screenshot 2024-04-17 at 9 29 03 AM" src="https://github.com/BradenTink/SENG-637/assets/59784141/f42d3461-f5e6-4bcd-9ae0-3851694d8413">
 Figure X. Risk Profile selected for the failure data, beta = 0.1, alpha = 0.1, and gamma = 2.
 
+
 In determining the minimum Mean Time To Failure (MTTFmin) necessary for acceptance using the provided failure data from the dataset, failure-dataset-a5.csv, an iterative process was employed. This involved plotting the data and systematically adjusting the Failure Intensity Overload (FIO) values until all data points unequivocally surpassed the reject boundary and a single point is touching the reject boundary line (refer to Figure X below). It's worth noting that the discrimination ratio (gamma) used was 2, along with a developer's risk (alpha) of 0.1 and a user's risk (beta) of 0.1. By ensuring that the majority of data points reside within the accept boundary region, while allowing for a few to linger within the continue testing boundary, the integrity and reliability of the system are steadfastly maintained.
 
 ![MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/cd1a97a7-263a-4949-b98f-4825c3b51cbe)
@@ -81,7 +82,7 @@ Figure X. Reliability Demonstration Chart with MTTFmin of 0.365 intervals and a 
 
 Alternatively, when the MTTFmin was halved and the resulting data points were examined, a clear trend emerged: all of them fell within the acceptable range (see Figure X below). This straightforward observation indicates a significant improvement in system reliability, confirming its adherence to predefined acceptability standards. With the adjusted MTTF value now at 0.091, the system demonstrates a satisfactory level of acceptability, instilling confidence in its operational effectiveness and suitability for deployment. This underscores the importance of MTTF in gauging system reliability and emphasizes the impact of precise parameter adjustments on system performance and acceptance status.
 
-image![half_MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/b23f3cd6-e42e-4e01-ae91-713b2f0af364)
+![half_MTTFmin_RDC](https://github.com/BradenTink/SENG-637/assets/59784141/b23f3cd6-e42e-4e01-ae91-713b2f0af364)
 Figure X. Reliability Demonstration Chart with MTTFmin of 0.091 intervals and a FIO of 340 failures per 31 intervals.
 
 The Reliability Demonstration Curve (RDC) is a powerful tool used to assess the reliability of systems and products, offering several advantages. One of its primary benefits is the clear visual representation it provides, allowing stakeholders to easily understand and interpret reliability data. This graphical depiction enables quantitative analysis, facilitating comparisons between different systems or products and aiding informed decision-making. Additionally, RDCs can predict failure rates over time by extrapolating the curve, which assists organizations in planning maintenance, replacements, or upgrades. Moreover, the standardization of RDCs within industries ensures consistent evaluation and comparison of reliability across various products or systems. Lastly, RDCs are commonly employed to assess compliance with reliability requirements specified in contracts, regulations, or standards, serving as a means to verify performance against predefined criteria.
@@ -100,5 +101,8 @@ Each team member tried both sections of the lab to try to get it to work. Since 
 
 # Difficulties encountered, challenges overcome, and lessons learned
 There were quite a few difficulties using CASRE and SRTAT. The provided excel sheet did not import well into SRTAT, and using CASRE was a bit tricky.
+In addition, although C-SFRAT worked well to explore various models, it did not have the Laplace test functionality. Thus, the provided data set had to be reformatted to work with SFRAT which provided the Laplace test functionality. 
+
+For Part 2, understanding the functionality of the Excel document was a bit tricky. The range of the RDC was limited to 16 for the x and y axis but since the data set had 31 data points, the plot had to be adjusted. Adjusting just the min/max of the x and y axis was not enough as the reject, continue test, and accept regions did not expand to the increased max range of the axis. Thus, modifications to the plot data sheet in the Excel document had to be made to expand these regions which required further exploration.
 # Comments/feedback on the lab itself
 The difficulties with CASRE and SRTAT made this lab the most frustrating, so the purpose of the lab was slightly lost in the difficulties with the tools.
