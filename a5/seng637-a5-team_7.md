@@ -53,6 +53,9 @@ Analysis revealed that the **Discrete Weibull Type 3 (DW3) model with covariate 
 
 Below are the graphs for DW3 and GM. We can see that both models are fitting close to the true values.
 
+![image](https://github.com/BradenTink/SENG-637/assets/69766712/eb064b32-60bc-44e0-956e-f2c99b3e29c3)
+
+
 **Observations:**
 
 - **Closeness to the Imported Data**: The lines follow the step function. This indicates that both models are likely providing a good fit to the observed data.
@@ -63,7 +66,7 @@ Below are the graphs for DW3 and GM. We can see that both models are fitting clo
 
 <img width="1075" alt="Screenshot_2024-04-17_at_10 32 38_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/fd831d9c-b4c1-43a0-8555-7bdafa345f65">
 
-![321737713-5eb206a2-bd0d-4a60-84c4-21e9f05f35ef](https://github.com/BradenTink/SENG-637/assets/69766712/f423b19c-65fc-4573-a7c8-82867b288498)
+![image](https://github.com/BradenTink/SENG-637/assets/69766712/76bd58e6-0636-4811-b3e6-45bf555bc93f)
 
 | Interval | Trend                                                     |
 | -------- | --------------------------------------------------------- |
