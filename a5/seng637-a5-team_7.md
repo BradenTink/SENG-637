@@ -91,7 +91,9 @@ However, the use of RDCs is not without its limitations and drawbacks. Construct
 # Comparison of Results
 
 # Discussion on Similarity and Differences of the Two Techniques
-
+The Demonstration Chart is based on the inter failure times only and target failure rate, whereas the Growth Analysis is based on the inter failure times and/or failure count and target failure rate. RDC should be used when failure data is limited to a few failures, time of failures are known, and one wants to find out what is the
+trend for reliability of the system. The growth test requires an approprate model, and is used to predict the reliability over time.
+Both are for prediciting reliability and trend, but go about it differently.
 # How the team work/effort was divided and managed
 Each team member tried both sections of the lab to try to get it to work. Since there were difficulties, the most complete of each section was used to assemble the final report.
 #
