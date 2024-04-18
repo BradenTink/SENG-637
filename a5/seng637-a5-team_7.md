@@ -20,7 +20,8 @@ Using failure data, we can assess the reliability of a system under test (SUT). 
 
 The **Laplace test** was used to determine the trend in the failure rate of a system. Failure data were collected and plotted to achieve a **90% confidence level**. The **x-axis** displays the failure count, while the **y-axis** shows the Laplace value.
 
-<img width="1154" alt="Screenshot_2024-04-17_at_10 26 29_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/9e1d0d51-569c-47d2-95fa-1182e8199d30">
+<img width="889" alt="Screenshot_2024-04-17_at_10 26 29_AM" src="https://github.com/BradenTink/SENG-637/assets/69766712/451ecf0a-5a7d-4fc5-8b7e-5bcd30d190b7">
+
 
 When the rate of change is **positive**, this indicates that the time between failures is decreasing, suggesting that failures are occurring more frequently. This could imply that the system or component is degrading or undergoing a wear-out process. Conversely, a **negative rate of change** suggests that the time between failures is increasing, implying that failures are becoming less frequent.
 
